@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BannerCollectionCellID" id="gTV-IL-0wX" customClass="BannerCollectionCell" customModule="Payment" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BannerCollectionItemID" id="gTV-IL-0wX" customClass="BannerCollectionItem" customModule="Payment" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="312" height="84"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -36,6 +36,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="banner1" width="342" height="80"/>
+        <image name="banner1" width="1435" height="334"/>
     </resources>
 </document>

@@ -13,13 +13,19 @@
 		05169D282A8DD50000F0F2E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05169D262A8DD50000F0F2E7 /* Main.storyboard */; };
 		05169D2A2A8DD50100F0F2E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05169D292A8DD50100F0F2E7 /* Assets.xcassets */; };
 		05169D2D2A8DD50100F0F2E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05169D2B2A8DD50100F0F2E7 /* LaunchScreen.storyboard */; };
-		052C99BB2A91D46B00A744B6 /* BannerCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C99B92A91D46B00A744B6 /* BannerCollectionCell.swift */; };
-		052C99BC2A91D46B00A744B6 /* BannerCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 052C99BA2A91D46B00A744B6 /* BannerCollectionCell.xib */; };
+		052C99BB2A91D46B00A744B6 /* BannerCollectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C99B92A91D46B00A744B6 /* BannerCollectionItem.swift */; };
+		052C99BC2A91D46B00A744B6 /* BannerCollectionItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 052C99BA2A91D46B00A744B6 /* BannerCollectionItem.xib */; };
 		052C99D42A92F6A000A744B6 /* HeaderSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C99D32A92F6A000A744B6 /* HeaderSectionView.swift */; };
 		052C99D82A92F8BB00A744B6 /* HeaderSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 052C99D72A92F8BB00A744B6 /* HeaderSectionView.xib */; };
 		052C99DB2A9300D800A744B6 /* OtherBillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C99D92A9300D800A744B6 /* OtherBillCell.swift */; };
 		052C99DC2A9300D800A744B6 /* OtherBillCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 052C99DA2A9300D800A744B6 /* OtherBillCell.xib */; };
 		052C99DF2A933EE600A744B6 /* CustomPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C99DE2A933EE600A744B6 /* CustomPageControl.swift */; };
+		052C99E62A93523900A744B6 /* RecentTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C99E42A93523900A744B6 /* RecentTransactionCell.swift */; };
+		052C99E72A93523900A744B6 /* RecentTransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 052C99E52A93523900A744B6 /* RecentTransactionCell.xib */; };
+		052C99E92A94490300A744B6 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C99E82A94490300A744B6 /* TransactionModel.swift */; };
+		052C99EB2A944E7200A744B6 /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C99EA2A944E7200A744B6 /* BannerModel.swift */; };
+		052C99ED2A94505F00A744B6 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C99EC2A94505F00A744B6 /* PaymentViewModel.swift */; };
+		052C99F02A9451D300A744B6 /* BillCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C99EF2A9451D300A744B6 /* BillCategoryModel.swift */; };
 		05C6E6602A8E25AD00800836 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C6E65E2A8E25AD00800836 /* BannerCell.swift */; };
 		05C6E6612A8E25AD00800836 /* BannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05C6E65F2A8E25AD00800836 /* BannerCell.xib */; };
 /* End PBXBuildFile section */
@@ -33,13 +39,19 @@
 		05169D292A8DD50100F0F2E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05169D2C2A8DD50100F0F2E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05169D2E2A8DD50100F0F2E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		052C99B92A91D46B00A744B6 /* BannerCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionCell.swift; sourceTree = "<group>"; };
-		052C99BA2A91D46B00A744B6 /* BannerCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerCollectionCell.xib; sourceTree = "<group>"; };
+		052C99B92A91D46B00A744B6 /* BannerCollectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionItem.swift; sourceTree = "<group>"; };
+		052C99BA2A91D46B00A744B6 /* BannerCollectionItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerCollectionItem.xib; sourceTree = "<group>"; };
 		052C99D32A92F6A000A744B6 /* HeaderSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSectionView.swift; sourceTree = "<group>"; };
 		052C99D72A92F8BB00A744B6 /* HeaderSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderSectionView.xib; sourceTree = "<group>"; };
 		052C99D92A9300D800A744B6 /* OtherBillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherBillCell.swift; sourceTree = "<group>"; };
 		052C99DA2A9300D800A744B6 /* OtherBillCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherBillCell.xib; sourceTree = "<group>"; };
 		052C99DE2A933EE600A744B6 /* CustomPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControl.swift; sourceTree = "<group>"; };
+		052C99E42A93523900A744B6 /* RecentTransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionCell.swift; sourceTree = "<group>"; };
+		052C99E52A93523900A744B6 /* RecentTransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentTransactionCell.xib; sourceTree = "<group>"; };
+		052C99E82A94490300A744B6 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
+		052C99EA2A944E7200A744B6 /* BannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
+		052C99EC2A94505F00A744B6 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
+		052C99EF2A9451D300A744B6 /* BillCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillCategoryModel.swift; sourceTree = "<group>"; };
 		05C6E65E2A8E25AD00800836 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		05C6E65F2A8E25AD00800836 /* BannerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,12 +86,13 @@
 		05169D1F2A8DD50000F0F2E7 /* Payment */ = {
 			isa = PBXGroup;
 			children = (
+				052C99EE2A9450FF00A744B6 /* Manager */,
 				052C99DD2A93106300A744B6 /* Model */,
-				05531B562A91022F0003446F /* ViewModel */,
 				0520037A2A8DDFE100BD472F /* View */,
+				05531B562A91022F0003446F /* ViewModel */,
+				052C99F12A94560500A744B6 /* View Controller */,
 				05169D202A8DD50000F0F2E7 /* AppDelegate.swift */,
 				05169D222A8DD50000F0F2E7 /* SceneDelegate.swift */,
-				05169D242A8DD50000F0F2E7 /* ViewController.swift */,
 				05169D262A8DD50000F0F2E7 /* Main.storyboard */,
 				05169D292A8DD50100F0F2E7 /* Assets.xcassets */,
 				05169D2B2A8DD50100F0F2E7 /* LaunchScreen.storyboard */,
@@ -93,13 +106,15 @@
 			children = (
 				05C6E65E2A8E25AD00800836 /* BannerCell.swift */,
 				05C6E65F2A8E25AD00800836 /* BannerCell.xib */,
-				052C99B92A91D46B00A744B6 /* BannerCollectionCell.swift */,
-				052C99BA2A91D46B00A744B6 /* BannerCollectionCell.xib */,
+				052C99B92A91D46B00A744B6 /* BannerCollectionItem.swift */,
+				052C99BA2A91D46B00A744B6 /* BannerCollectionItem.xib */,
 				052C99D32A92F6A000A744B6 /* HeaderSectionView.swift */,
 				052C99D72A92F8BB00A744B6 /* HeaderSectionView.xib */,
 				052C99D92A9300D800A744B6 /* OtherBillCell.swift */,
 				052C99DA2A9300D800A744B6 /* OtherBillCell.xib */,
 				052C99DE2A933EE600A744B6 /* CustomPageControl.swift */,
+				052C99E42A93523900A744B6 /* RecentTransactionCell.swift */,
+				052C99E52A93523900A744B6 /* RecentTransactionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -107,13 +122,32 @@
 		052C99DD2A93106300A744B6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				052C99E82A94490300A744B6 /* TransactionModel.swift */,
+				052C99EA2A944E7200A744B6 /* BannerModel.swift */,
+				052C99EF2A9451D300A744B6 /* BillCategoryModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		052C99EE2A9450FF00A744B6 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		052C99F12A94560500A744B6 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				05169D242A8DD50000F0F2E7 /* ViewController.swift */,
+			);
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 		05531B562A91022F0003446F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				052C99EC2A94505F00A744B6 /* PaymentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -177,12 +211,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				05169D2D2A8DD50100F0F2E7 /* LaunchScreen.storyboard in Resources */,
+				052C99E72A93523900A744B6 /* RecentTransactionCell.xib in Resources */,
 				05C6E6612A8E25AD00800836 /* BannerCell.xib in Resources */,
 				05169D2A2A8DD50100F0F2E7 /* Assets.xcassets in Resources */,
 				052C99DC2A9300D800A744B6 /* OtherBillCell.xib in Resources */,
 				052C99D82A92F8BB00A744B6 /* HeaderSectionView.xib in Resources */,
 				05169D282A8DD50000F0F2E7 /* Main.storyboard in Resources */,
-				052C99BC2A91D46B00A744B6 /* BannerCollectionCell.xib in Resources */,
+				052C99BC2A91D46B00A744B6 /* BannerCollectionItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,11 +230,16 @@
 			files = (
 				052C99D42A92F6A000A744B6 /* HeaderSectionView.swift in Sources */,
 				05169D252A8DD50000F0F2E7 /* ViewController.swift in Sources */,
+				052C99E62A93523900A744B6 /* RecentTransactionCell.swift in Sources */,
 				05C6E6602A8E25AD00800836 /* BannerCell.swift in Sources */,
+				052C99E92A94490300A744B6 /* TransactionModel.swift in Sources */,
 				052C99DB2A9300D800A744B6 /* OtherBillCell.swift in Sources */,
 				05169D212A8DD50000F0F2E7 /* AppDelegate.swift in Sources */,
+				052C99ED2A94505F00A744B6 /* PaymentViewModel.swift in Sources */,
+				052C99F02A9451D300A744B6 /* BillCategoryModel.swift in Sources */,
+				052C99EB2A944E7200A744B6 /* BannerModel.swift in Sources */,
 				05169D232A8DD50000F0F2E7 /* SceneDelegate.swift in Sources */,
-				052C99BB2A91D46B00A744B6 /* BannerCollectionCell.swift in Sources */,
+				052C99BB2A91D46B00A744B6 /* BannerCollectionItem.swift in Sources */,
 				052C99DF2A933EE600A744B6 /* CustomPageControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

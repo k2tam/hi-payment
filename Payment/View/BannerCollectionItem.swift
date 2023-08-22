@@ -7,12 +7,12 @@
 
 import UIKit
 
-class BannerCollectionCell: UICollectionViewCell {
+class BannerCollectionItem: UICollectionViewCell {
     
-    static let identifier = "BannerCollectionCellID"
+    static let identifier = "BannerCollectionItemID"
     
     static func nib() -> UINib {
-        return UINib(nibName: "BannerCollectionCell", bundle: nil)
+        return UINib(nibName: "BannerCollectionItem", bundle: nil)
     }
 
     @IBOutlet weak var imageView: UIImageView!

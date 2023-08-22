@@ -10,12 +10,12 @@ import UIKit
 enum PaymentSection {
     case banner
     case otherBills
-    
+    case recentTrans
 }
 
 class ViewController: UIViewController {
     
-    private let data:[PaymentSection] = [.banner,.otherBills]
+    private let data:[PaymentSection] = [.banner,.otherBills,.recentTrans]
     
     @IBOutlet weak var paymentTblView: UITableView!
     
@@ -34,6 +34,7 @@ class ViewController: UIViewController {
         
         paymentTblView.register(BannerCell.nib(), forCellReuseIdentifier: BannerCell.identifier)
         paymentTblView.register(OtherBillCell.nib(), forCellReuseIdentifier: OtherBillCell.identifier)
+        paymentTblView.register(RecentTransactionCell.nib(), forCellReuseIdentifier: RecentTransactionCell.identifier)
         
         
     }
@@ -51,7 +52,8 @@ extension ViewController: UITableViewDataSource {
             return 1
         case.otherBills:
             return 1
-            
+        case .recentTrans:
+            return 1
             
         }
     }
@@ -75,8 +77,10 @@ extension ViewController: UITableViewDataSource {
             return nil
         case .otherBills:
             headerView.configure(leadingLabel: "Hoá đơn khác")
-            
+        case .recentTrans:
+            headerView.configure(leadingLabel: "Giao dịch gần đây")
         }
+        
         
         return headerView
     }
@@ -84,11 +88,10 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if data[section] == .banner {
             return 0
-        }else if data[section] == .otherBills {
+        }else {
             return 32.0 // Adjust this value to your desired top distance
         }
         
-        return 0.0
     }
     
     
@@ -115,18 +118,35 @@ extension ViewController: UITableViewDataSource {
             }
             
             return cell
+            
+        case .recentTrans:
+            let cell = tableView.dequeueReusableCell(withIdentifier: RecentTransactionCell.identifier, for: indexPath) as? RecentTransactionCell
+            
+            guard let cell = cell else {
+                print("Cell is nil")
+                return UITableViewCell()
+                
+            }
+            
+            return cell
   
         }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        
         switch data[indexPath.section] {
         case .banner:
             return 80.0
         case .otherBills:
             return 120.0
+        default:
+            return UITableView.automaticDimension
+            
         }
-        
+ 
     }
 
 }

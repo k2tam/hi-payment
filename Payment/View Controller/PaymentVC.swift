@@ -132,13 +132,16 @@ extension PaymentVC: UITableViewDataSource {
             cell.bannerData = bannerModels
             
             return cell
-        case .billCategories:
+            
+        case .billCategories(let billcategoriesDataModel):
             let cell = tableView.dequeueReusableCell(withIdentifier: BillCategoryCell.identifier, for: indexPath) as? BillCategoryCell
             
             guard let cell = cell else {
                 print("Cell is nil")
                 return UITableViewCell()
             }
+            
+            cell.billCategoriesData = billcategoriesDataModel
             
             return cell
             

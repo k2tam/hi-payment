@@ -10,7 +10,7 @@ import UIKit
 @IBDesignable
 class CustomPageControl: UIControl {
     //MARK:- Properties
-    
+
     private var numberOfDots = [UIView]() {
         didSet{
             if numberOfDots.count == numberOfPages {
@@ -34,7 +34,10 @@ class CustomPageControl: UIControl {
     
     var currentPage: Int = 0 {
         didSet{
-            updateSelectedDotAppearance()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.updateSelectedDotAppearance()
+
+            }
         }
     }
     
@@ -44,7 +47,7 @@ class CustomPageControl: UIControl {
         }
         
         let selectedDot = numberOfDots[currentPage]
-        
+
         _ = numberOfDots.map { (dot) in
             setupDotAppearance(dot: dot)
             if dot.tag == selectedDot.tag {
@@ -55,6 +58,7 @@ class CustomPageControl: UIControl {
                 })
             }
         }
+        
     }
     
     
@@ -111,10 +115,7 @@ class CustomPageControl: UIControl {
         super.init(coder: aDecoder)
         
     }
-    
-    
-    
-    
+
     @objc private func onPageControlTapped(_ sender: UITapGestureRecognizer) {
         
         guard let selectedDot = sender.view else { return }

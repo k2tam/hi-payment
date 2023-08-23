@@ -18,12 +18,14 @@ class BannerCell: UITableViewCell {
     @IBOutlet weak var bannerCollectionView: UICollectionView!
     
     let pc = CustomPageControl.init(frame: .zero)
+    var timer: Timer?
+    
     
     var bannerData: [BannerDataModel]? {
         didSet {
             bannerCollectionView.reloadData()
             setupPageControl()
-
+            
         }
     }
     
@@ -32,6 +34,8 @@ class BannerCell: UITableViewCell {
         
         setupPageControl()
         setupCollectionView()
+        
+        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(updateCurrentPage), userInfo: nil, repeats: true)
 
     }
     
@@ -40,15 +44,12 @@ class BannerCell: UITableViewCell {
         pc.pageIndicatorTintColor = .white
         
         pc.numberOfPages = bannerData?.count ?? 0
-        
+        self.pc.currentPage = 0
 
+        
         pc.translatesAutoresizingMaskIntoConstraints = false
-        
-        
         contentView.addSubview(pc)
-        
         contentView.addConstraints([
-            
             pc.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -6),
             pc.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 0),
             pc.heightAnchor.constraint(equalToConstant: 12),
@@ -56,12 +57,34 @@ class BannerCell: UITableViewCell {
             
         ])
         
-        DispatchQueue.main.async {
+    }
+    
+    @objc func updateCurrentPage() {
+        guard let bannerData = bannerData else { return }
+        
+        
+       
+        
+        if self.pc.currentPage == bannerData.count - 1 {
+            self.pc.currentPage = 0
+        } else {
+            self.pc.currentPage += 1
+        }
+        
+        // Update the selected dot appearance immediately after page change
+        self.pc.updateSelectedDotAppearance()
+
+        
+        // Scroll the collectionView to the updated current page
+        let indexPath = IndexPath(item: self.pc.currentPage, section: 0)
+        self.bannerCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                self.pc.updateSelectedDotAppearance()
            }
-        
+ 
     }
-
+    
     
     private func setupCollectionView() {
         bannerCollectionView.layer.cornerRadius = 8
@@ -99,7 +122,7 @@ extension BannerCell: UICollectionViewDataSource {
         }
         
         cell.imageView.kf.setImage(with: bannerImgUrl)
-
+        
         return cell
     }
     
@@ -112,16 +135,18 @@ extension BannerCell: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-            return 0
+        return 0
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-            // Calculate the current page based on the current content offset
-            let currentPage = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
-            pc.currentPage = currentPage
-        }
+        // Calculate the current page based on the current content offset
+        let currentPage = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
+        pc.currentPage = currentPage
+    }
     
 }
+
+
 
 
 

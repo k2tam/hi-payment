@@ -20,9 +20,9 @@ class RecentTransactionCell: UITableViewCell {
             
             transactionID.text = "SGH123456"
             transactionTitle.text = transactionHistoryModel.title
-            transactionTotal.text = String(transactionHistoryModel.total)
+            transactionTotal.text = formatThousands(transactionHistoryModel.total) ?? ""
             transactionTime.text = transactionHistoryModel.transactionTime
-            currencyLabel.text = transactionHistoryModel.currency
+            currencyLabel.attributedText = formatCurrencyCharacterToSuperscriptAndUnderline(transactionHistoryModel.currency)
         }
     }
     
@@ -42,11 +42,43 @@ class RecentTransactionCell: UITableViewCell {
         contentView.layer.cornerRadius = 8.0
         contentView.clipsToBounds = true
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
+    
+    private func formatThousands(_ number: Int) -> String? {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.groupingSeparator = "."
+        numberFormatter.numberStyle = .decimal
+        
+        if let formattedString = numberFormatter.string(from: NSNumber(value: number)) {
+            return formattedString
+        }
+        
+        return nil
+    }
+    
+    func formatCurrencyCharacterToSuperscriptAndUnderline(_ character: String) -> NSAttributedString {
+        let attributedString = NSMutableAttributedString(string: character)
+        
+        // Convert to superscript
+        let superscriptFont = UIFont.systemFont(ofSize: 9) // Adjust the size for superscript
+        let superscriptAttributes: [NSAttributedString.Key: Any] = [
+            .font: superscriptFont,
+            .baselineOffset: 3 // Adjust the offset for superscript
+        ]
+        attributedString.addAttributes(superscriptAttributes, range: NSRange(location: 0, length: 1))
+        
+        // Add underline
+        attributedString.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: 1))
+        
+        return attributedString
+    }
+
+    
+    
     
 }

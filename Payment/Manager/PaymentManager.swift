@@ -33,6 +33,16 @@ class PaymetManager {
                     "actionType": "go_to_screen",
                     "data": nil
                 ]
+            ],
+            
+            [
+                "id": 1449,
+                "imageUrl": "https://s3.amazonaws.com/SSL_Assets/apple/iBooks_DIS_Banner_Master_15n.png",
+                "action": [
+                    "dataAction": "FOXPAY_HOME",
+                    "actionType": "go_to_screen",
+                    "data": nil
+                ]
             ]
         ]
     ] as [String : Any])

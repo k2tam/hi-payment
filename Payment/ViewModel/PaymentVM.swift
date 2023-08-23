@@ -50,6 +50,8 @@ class PaymentVM {
 
     }
     
+  
+    
     func fetchPaymentTblData() {
         PaymetManager.shared.callBannerAPI { [weak self] bannerData in
             guard let self = self else { return }
@@ -61,7 +63,6 @@ class PaymentVM {
             guard let self = self else { return }
             self.recentTransactionData = recentTransactionData
             self.composeData()
-        
         }
         
         PaymetManager.shared.callBillCategoryAPI { [weak self] billCategoriesData in

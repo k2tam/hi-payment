@@ -9,7 +9,7 @@ import Foundation
 import SwiftyJSON
 
 
-struct RecentTransactionModel {
+struct RecentTransactionsModel {
     let statusCode: Int
     let message: String
     let data: TransactionDataModel
@@ -18,8 +18,6 @@ struct RecentTransactionModel {
         self.statusCode = json["statusCode"].intValue
         self.message = json["message"].stringValue
         self.data = TransactionDataModel(json: json["data"])
-        
-        
     }
 }
 
@@ -49,7 +47,6 @@ struct TransactionHistoryModel {
         self.totalText = json["totalText"].stringValue
         self.currency = json["currency"].stringValue
     }
-    
 }
 
 struct TransactionContentModel {

@@ -8,5 +8,6 @@ target 'Payment' do
   # Pods for Payment
 	pod 'SwiftyJSON'
 	pod 'Alamofire'
+	pod 'Kingfisher'
 
 end

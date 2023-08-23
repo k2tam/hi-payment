@@ -39,6 +39,10 @@ class CustomPageControl: UIControl {
     }
     
     func updateSelectedDotAppearance() {
+        if numberOfPages <= 0 {
+            return
+        }
+        
         let selectedDot = numberOfDots[currentPage]
         
         _ = numberOfDots.map { (dot) in

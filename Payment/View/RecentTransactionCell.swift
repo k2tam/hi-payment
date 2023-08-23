@@ -14,11 +14,23 @@ class RecentTransactionCell: UITableViewCell {
         return UINib(nibName: "RecentTransactionCell", bundle: nil)
     }
     
+    var transactionHistoryModel: TransactionHistoryModel? {
+        didSet {
+            guard let transactionHistoryModel = transactionHistoryModel else {return}
+            
+            transactionID.text = "SGH123456"
+            transactionTitle.text = transactionHistoryModel.title
+            transactionTotal.text = String(transactionHistoryModel.total)
+            transactionTime.text = transactionHistoryModel.transactionTime
+            currencyLabel.text = transactionHistoryModel.currency
+        }
+    }
+    
     @IBOutlet weak var transactionID: UILabel!
     @IBOutlet weak var transactionTitle: UILabel!
     @IBOutlet weak var transactionTotal: UILabel!
     @IBOutlet weak var transactionTime: UILabel!
-    
+    @IBOutlet weak var currencyLabel: UILabel!
     
     
     override func awakeFromNib() {

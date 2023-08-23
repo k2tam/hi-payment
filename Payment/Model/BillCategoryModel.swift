@@ -8,7 +8,7 @@
 import Foundation
 import SwiftyJSON
 
-struct BillCategoryModel {
+struct BillCategoriesModel {
     let statusCode: Int
     let message: String
     let data: BillCategoryDataModel

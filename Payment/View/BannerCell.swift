@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class BannerCell: UITableViewCell {
     static let identifier = "BannerCellID"
@@ -14,34 +15,32 @@ class BannerCell: UITableViewCell {
         return UINib(nibName: "BannerCell", bundle: nil)
     }
     
-    let pc = CustomPageControl.init(frame: .zero)
-
-    
-    private var bannerImages: [String]? = ["banner1","banner2","banner3","banner4"]
-    
     @IBOutlet weak var bannerCollectionView: UICollectionView!
     
+    let pc = CustomPageControl.init(frame: .zero)
     
-    func setBannerImages(images: [String]) {
-        self.bannerImages = images
+    var bannerData: [BannerDataModel]? {
+        didSet {
+            bannerCollectionView.reloadData()
+            setupPageControl()
+
+        }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
         setupPageControl()
         setupCollectionView()
-        
 
-        
     }
     
     private func setupPageControl() {
         pc.currentPageIndicatorTintColor = .blue
         pc.pageIndicatorTintColor = .white
         
-        pc.numberOfPages = bannerImages?.count ?? 0
+        pc.numberOfPages = bannerData?.count ?? 0
+        
 
         pc.translatesAutoresizingMaskIntoConstraints = false
         
@@ -79,14 +78,14 @@ class BannerCell: UITableViewCell {
 
 extension BannerCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return bannerImages?.count ?? 0
+        return bannerData?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BannerCollectionItem.identifier, for: indexPath) as? BannerCollectionItem
         
-        guard let cell = cell else{
-            print("Cell is nil")
+        guard let cell = cell, let bannerData = bannerData else{
+            print("Cell or banner model is nil")
             return UICollectionViewCell()
         }
         
@@ -94,7 +93,12 @@ extension BannerCell: UICollectionViewDataSource {
         cell.layer.cornerRadius = 8
         cell.clipsToBounds = true
         
-        cell.imageView.image = UIImage(named: bannerImages?[indexPath.item] ?? "banner1")
+        
+        guard let bannerImgUrl = URL(string: bannerData[indexPath.item].imageUrl) else {
+            return UICollectionViewCell()
+        }
+        
+        cell.imageView.kf.setImage(with: bannerImgUrl)
 
         return cell
     }
